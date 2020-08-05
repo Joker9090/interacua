@@ -247,6 +247,7 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
+          
           <section className="section section-lg">
             <Container>
               <Row className="row-grid align-items-center">
@@ -854,6 +855,7 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
+          
           <Download />
         </main>
         <CardsFooter />

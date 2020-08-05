@@ -30,3 +30,14 @@
 
 // React Differences
 @import "react/react-differences";
+
+.slick-track {
+  padding-bottom: 30px;
+  .slick-slide {
+    padding: 15px;
+  }
+}
+.slick-arrow:before {
+  color: #222ab9;
+  font-size: 26px;
+}

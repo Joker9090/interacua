@@ -43,12 +43,12 @@ class Hero extends React.Component {
             <Container className="shape-container d-flex align-items-center py-lg">
               <div className="col px-0">
                 <Row className="align-items-center justify-content-center">
-                  <Col className="text-center" lg="6">
+                  <Col className="text-center with-shadow" lg="6">
                     <img
                       alt="..."
                       className="img-fluid"
                       src={require("assets/img/brand/argon-react-white.png")}
-                      style={{ width: "200px" }}
+                      style={{ width: "300px" }}
                     />
                     <p className="lead text-white">
                       Centro de actividades acuáticas de la Argentina

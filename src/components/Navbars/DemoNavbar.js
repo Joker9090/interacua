@@ -142,7 +142,7 @@ class DemoNavbar extends React.Component {
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      className="nav-link-icon"
+                      className="nav-link-icon d-none"
                       href="https://twitter.com/interacua"
                       id="tooltip184698705"
                       target="_blank"

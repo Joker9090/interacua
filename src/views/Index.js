@@ -63,7 +63,7 @@ class Index extends React.Component {
     infinite: true,
     arrows: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 2,
     slidesToScroll: 1,
     responsive: [
 
@@ -96,12 +96,33 @@ class Index extends React.Component {
         <DemoNavbar />
         <main ref="main">
           <Hero />
+
+
           <section className="section section-lg">
             <Container>
-              <Row className="justify-content-center text-center mb-lg">
-                <Col lg="8">
+              <Row className="justify-content-center text-center">
+                <Col lg="6">
+                  <h2 className="display-3">Misión</h2>
+                  <p className="lead text-muted">
+                    Nuestra misión es acercar los beneficios del medio acuático a cada grupo etario respetando todas las etapas del ciclo vital, las necesidades individuales y sus intereses particulares.
+                  </p>
+                </Col>
+                <Col lg="6">
+                  <h2 className="display-3">Visión</h2>
+                  <p className="lead text-muted">
+                    Acercar el medio acuático de una manera CONFIABLE y DURADERA cada vez a más personas.
+                    <br />
+                    Ser un referente en nuestra zona en el brindando de actividades acuáticas para la comunidad.
+                  </p>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+          <section className="section section-lg pt-0">
+            <Container>
+              <Row className="justify-content-center text-center mb-4 pb-3">
+                <Col xs="12">
                   <h2 className="display-3">Quiénes somos</h2>
-                  <p className="lead text-muted"> Un equipo de profesionales destinados al entrenamiento didactico.</p>
                 </Col>
               </Row>
               <Row>
@@ -118,9 +139,11 @@ class Index extends React.Component {
                         <div className="pt-4 text-center">
                           <h5 className="title">
                             <span className="d-block mb-1">Sebastian Valente</span>
-                            <small className="h6 text-muted">Profesor de Natación</small>
+                            <small className="h6 text-muted">Lic. en Educación Física y Deportes - UAI</small>
+                            <br />
+                            <small className="h6 text-muted">Guardavidas - AMGAA</small>
                           </h5>
-                          <div className="mt-3">
+                          <div className="mt-3 d-none">
                             <Button
                               className="btn-icon-only rounded-circle"
                               color="warning"
@@ -154,15 +177,17 @@ class Index extends React.Component {
                         <img
                           alt="..."
                           className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                          src={require("assets/img/theme/seba.jpg")}
+                          src={require("assets/img/theme/fotos/Pablo.jpg")}
                           style={{ width: "200px" }}
                         />
                         <div className="pt-4 text-center">
                           <h5 className="title">
-                            <span className="d-block mb-1">Sebastian Valente</span>
-                            <small className="h6 text-muted">Profesor de Natación</small>
+                            <span className="d-block mb-1">Pablo Ponomareff</span>
+                            <small className="h6 text-muted">Prof.  Nacional de Educación Física - ISEF N*2</small>
+                            <br />
+                            <small className="h6 text-muted">Guardavidas - AMGAA</small>
                           </h5>
-                          <div className="mt-3">
+                          <div className="mt-3 d-none">
                             <Button
                               className="btn-icon-only rounded-circle"
                               color="primary"
@@ -182,90 +207,6 @@ class Index extends React.Component {
                             <Button
                               className="btn-icon-only rounded-circle ml-1"
                               color="primary"
-                              href="#pablo"
-                              onClick={e => e.preventDefault()}
-                            >
-                              <i className="fa fa-dribbble" />
-                            </Button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mb-5 mb-lg-0">
-                      <div className="px-4">
-                        <img
-                          alt="..."
-                          className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                          src={require("assets/img/theme/seba.jpg")}
-                          style={{ width: "200px" }}
-                        />
-                        <div className="pt-4 text-center">
-                          <h5 className="title">
-                            <span className="d-block mb-1">Sebastian Valente</span>
-                            <small className="h6 text-muted">Profesor de Natación</small>
-                          </h5>
-                          <div className="mt-3">
-                            <Button
-                              className="btn-icon-only rounded-circle"
-                              color="info"
-                              href="#pablo"
-                              onClick={e => e.preventDefault()}
-                            >
-                              <i className="fa fa-twitter" />
-                            </Button>
-                            <Button
-                              className="btn-icon-only rounded-circle ml-1"
-                              color="info"
-                              href="#pablo"
-                              onClick={e => e.preventDefault()}
-                            >
-                              <i className="fa fa-facebook" />
-                            </Button>
-                            <Button
-                              className="btn-icon-only rounded-circle ml-1"
-                              color="info"
-                              href="#pablo"
-                              onClick={e => e.preventDefault()}
-                            >
-                              <i className="fa fa-dribbble" />
-                            </Button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mb-5 mb-lg-0">
-                      <div className="px-4">
-                        <img
-                          alt="..."
-                          className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                          src={require("assets/img/theme/seba.jpg")}
-                          style={{ width: "200px" }}
-                        />
-                        <div className="pt-4 text-center">
-                          <h5 className="title">
-                            <span className="d-block mb-1">Sebastian Valente</span>
-                            <small className="h6 text-muted">Profesor de Natación</small>
-                          </h5>
-                          <div className="mt-3">
-                            <Button
-                              className="btn-icon-only rounded-circle"
-                              color="success"
-                              href="#pablo"
-                              onClick={e => e.preventDefault()}
-                            >
-                              <i className="fa fa-twitter" />
-                            </Button>
-                            <Button
-                              className="btn-icon-only rounded-circle ml-1"
-                              color="success"
-                              href="#pablo"
-                              onClick={e => e.preventDefault()}
-                            >
-                              <i className="fa fa-facebook" />
-                            </Button>
-                            <Button
-                              className="btn-icon-only rounded-circle ml-1"
-                              color="success"
                               href="#pablo"
                               onClick={e => e.preventDefault()}
                             >
@@ -278,14 +219,24 @@ class Index extends React.Component {
                   </Slider>
                 </Col>
               </Row>
+              <Row className="justify-content-center text-center mb-lg">
+                <Col lg="8">
+                  <p className="lead text-muted">
+                    Somos un equipo de profesionales del área de la actividad física que compartimos nuestra afinidad por los deportes y, en especial, por los desafíos en el medio acuático.
+                  </p>
+                  <p className="lead text-muted">
+                    El agua es, para nosotros, un espacio de disfrute personal. Promovemos el deporte acuático con el fin de mejorar el estado físico, mantener nuestra salud, y como actividad lúdico-recreativa.
+                  </p>
+                </Col>
+              </Row>
             </Container>
           </section>
           <section className="section bg-secondary">
             <Container>
               <Row className="justify-content-center text-center mb-lg">
                 <Col lg="8">
-                  <h2 className="display-3">Qué hacemos</h2>
-                  <p className="lead text-muted">
+                  <h2 className="display-3">ACTIVIDADES ACUÁTICAS A DOMICILIO</h2>
+                  <p className="lead text-muted d-none">
                     Nos dedicamos a todo tipo de actividades acuaticas. Donde hay agua, <br /> ahi estaremos.
                   </p>
                 </Col>
@@ -296,7 +247,7 @@ class Index extends React.Component {
                   <img
                     alt="..."
                     className="img-fluid floating"
-                    src={require("assets/img/theme/f.jpg")}
+                    src={require("assets/img/theme/fotos/natacionAdomicilio.jpg")}
                   />
                 </Col>
                 <Col md="6">
@@ -304,17 +255,10 @@ class Index extends React.Component {
                     <div className="d-none icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                       <i className="ni ni-settings" />
                     </div>
-                    <h3>Actividades Acuáticas</h3>
                     <p className="lead">
-                      Usando piletas municipales, creamos espacios de trabajo
-                      donde son bienvenidos tanto grandes como chicos.
-                    </p>
-                    <p>
-                      Las <b>Actividades</b> son de entrentamiento, practica, o recuperacion muscular.
-                    </p>
-                    <p>
-                      Las clases pueden ser armadas a medida dependiendo del las personas que la integren
-                      y creando ejercicios para los mimsos.
+                      <b>Clases de natación: </b>
+                      Nos trasladamos hasta tu domicilio  con todos los materiales necesarios. La cantidad de sesiones por semana y el horario son a convenir.
+                      <br />Las clases pueden ser individuales o de grupos reducidos. Todos los niveles.
                     </p>
                     { /*
                     <a
@@ -337,17 +281,191 @@ class Index extends React.Component {
                   <img
                     alt="..."
                     className="img-fluid floating"
-                    src={require("assets/img/theme/a.jpeg")}
+                    src={require("assets/img/theme/fotos/coloniaRodante.jpg")}
                   />
                 </Col>
-                <Col className="order-md-1" md="6">
+                <Col md="6" className="order-md-1">
+                  <div className="pl-md-5">
+                    <div className="d-none icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
+                      <i className="ni ni-settings" />
+                    </div>
+                    <p className="lead">
+                      <b>Colonia Rodante: </b>
+                    </p>
+                    { /*
+                    <a
+                      className="font-weight-bold text-warning mt-5"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                    >
+                      A beautiful UI Kit for impactful websites
+                    </a>
+                    */ }
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+          <section className="section bg-secondary">
+            <Container>
+              <Row className="row-grid align-items-center">
+                <Col className="" md="6">
+                  <img
+                    alt="..."
+                    className="img-fluid floating"
+                    src={require("assets/img/theme/fotos/acuagym.jpg")}
+                  />
+                </Col>
+                <Col md="6">
+                  <div className="pl-md-5">
+                    <div className="d-none icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
+                      <i className="ni ni-settings" />
+                    </div>
+                    <p className="lead">
+                      <b>Aquagym: </b>
+                      Clases de Gimnasia acuática individual ó grupal en tu pileta particular. LLevamos todo lo necesario. Mejora el  acondicionamiento físico general, aeróbico y muscular de una forma divertida.
+                    </p>
+                    { /*
+                    <a
+                      className="font-weight-bold text-warning mt-5"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                    >
+                      A beautiful UI Kit for impactful websites
+                    </a>
+                    */ }
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+
+          <section className="section section-lg">
+            <Container>
+              <Row className="row-grid align-items-center">
+                <Col className="order-md-2" md="6">
+                  <img
+                    alt="..."
+                    className="img-fluid floating"
+                    src={require("assets/img/theme/fotos/tardeAmigos.jpg")}
+                  />
+                </Col>
+                <Col md="6" className="order-md-1">
+                  <div className="pl-md-5">
+                    <div className="d-none icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
+                      <i className="ni ni-settings" />
+                    </div>
+                    <p className="lead">
+                      <b>Tarde con amigos: </b>
+                      ¡Es una forma original de juntarte con amigos y pasarla bomba! Consiste en una jornada de 2/3 horas, donde se desarrollan juegos acuáticos con distintos materiales: Lanza-aguas, bombuchas, juegos de pesca, juegos de encestar, etc.
+                      <br />Se comparte una merienda todos juntos y se realiza una actividad de finalización.
+                    </p>
+                    { /*
+                    <a
+                      className="font-weight-bold text-warning mt-5"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                    >
+                      A beautiful UI Kit for impactful websites
+                    </a>
+                    */ }
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+          
+          <section className="section section-lg">
+            <Container>
+
+              <Row className="justify-content-center text-center mb-lg">
+                <Col lg="8">
+                  <h2 className="display-3">ACTIVIDADES EN PILETA</h2>
+                </Col>
+              </Row>
+
+              <Row className="row-grid align-items-center">
+                <Col className="" md="6">
+                  <img
+                    alt="..."
+                    className="img-fluid floating"
+                    src={require("assets/img/theme/fotos/Pile16.jpg")}
+                  />
+                </Col>
+                <Col className="" md="6">
                   <div className="pr-md-5">
                     <div className="d-none icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
                       <i className="ni ni-settings-gear-65" />
                     </div>
-                    <h3>Eventos y Fiestas acuáticas</h3>
+                    <h3>Clases de natación para niños, adolescentes y adultos </h3>
                     <p>
-                      Días festivos con multipes personas y eventos personalizados para sacar lo maximo en diversion!
+                      (Consulta sedes disponibles)
+                    </p>
+                    <ul className="list-unstyled mt-5">
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge
+                              className="badge-circle mr-3"
+                              color="success"
+                            >
+                              <i className="ni ni-satisfied" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h6 className="mb-0">Algun Agregado ?</h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li className="py-2">
+                        <div className="d-flex align-items-center">
+                          <div>
+                            <Badge
+                              className="badge-circle mr-3"
+                              color="success"
+                            >
+                              <i className="ni ni-satisfied" />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h6 className="mb-0">
+                              Algun Agregado ?
+                            </h6>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+
+          <section className="section section-lg">
+            <Container>
+            <Row className="justify-content-center text-center mb-lg">
+                <Col lg="8">
+                  <h2 className="display-3">EVENTOS Y FIESTAS ACUÁTICAS</h2>
+                </Col>
+              </Row>
+
+              <Row className="row-grid align-items-center">
+                <Col className="order-md-2" md="6">
+                  <img
+                    alt="..."
+                    className="img-fluid floating"
+                    src={require("assets/img/theme/fotos/cumple2.jpg")}
+                  />
+                </Col>
+                <Col md="6" className="order-md-1">
+                  <div className="pl-md-5">
+                    <div className="d-none icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
+                      <i className="ni ni-settings" />
+                    </div>
+                    <p className="lead">
+                      <b>Cumpleaños acuáticos: </b>
+                      La forma más divertida de festejar tu cumpleaños. Una propuesta original,  con o sin pileta, te ofrecemos las mejores actividades con agua y terrestres para jugar y divertirse.. 
+                      <br />Incluye material deportivo y Profes de Ed. Física que para ponerle la mejor onda a la fiesta. 
                     </p>
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
@@ -367,39 +485,16 @@ class Index extends React.Component {
                           </div>
                         </div>
                       </li>
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="ni ni-satisfied" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0">Comidas integradas</h6>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="ni ni-satisfied" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0">
-                              Descuentos por cantidad
-                            </h6>
-                          </div>
-                        </div>
-                      </li>
                     </ul>
+                    { /*
+                    <a
+                      className="font-weight-bold text-warning mt-5"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                    >
+                      A beautiful UI Kit for impactful websites
+                    </a>
+                    */ }
                   </div>
                 </Col>
               </Row>
@@ -412,7 +507,7 @@ class Index extends React.Component {
                   <img
                     alt="..."
                     className="img-fluid floating"
-                    src={require("assets/img/theme/i.jpg")}
+                    src={require("assets/img/theme/fotos/empresariales.jpg")}
                   />
                 </Col>
                 <Col md="6">
@@ -420,20 +515,132 @@ class Index extends React.Component {
                     <div className="d-none icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                       <i className="ni ni-settings" />
                     </div>
-                    <h3>Colonia de vacaciones</h3>
                     <p className="lead">
-                      Espacios verdes con acceso a pileta. Días enteros de diversión y ejercicio.
+                      <b>Eventos empresariales: </b>
+                      Organización de jornadas lúdicas en pileta, jornadas náuticas, y clases grupales. Coordinados por Profesores de Educación física y equipos de guardavidas. Todo lo que necesitas para disfrutar al máximo del agua, de una manera segura y divertida.
                     </p>
-                    <p>
-                      Las colonias son en los meses <b>Noviembre</b> y <b>Diciembre</b>.
-                    </p>
+                    { /*
                     <a
                       className="font-weight-bold text-warning mt-5"
-                      href="#cupos"
+                      href="#pablo"
                       onClick={e => e.preventDefault()}
                     >
-                      Consulte cupos disponibles
+                      A beautiful UI Kit for impactful websites
                     </a>
+                    */ }
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+          
+          <section className="section bg-secondary">
+            <Container>
+              
+              <Row className="row-grid align-items-center">
+                <Col className="order-md-2" md="6">
+                  <img
+                    alt="..."
+                    className="img-fluid floating"
+                    src={require("assets/img/theme/fotos/jornadaNautica.jpg")}
+                  />
+                </Col>
+                <Col md="6" className="order-md-1">
+                  <div className="pl-md-5">
+                    <div className="d-none icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
+                      <i className="ni ni-settings" />
+                    </div>
+                    <p className="lead">
+                      <b>Jornadas náuticas: </b>
+                      No te pierdas nuestro  ¨Adventure Day¨. Una jornada náutica al aire libre llena de buenos momentos. Brindamos de acuerdo al tipo de actividad, salidas en Kayaks, SUP e iniciación al Windsurf. 
+                      <br />Están pensadas para que todos/as puedan participar y disfrutar sin conocimientos previos. Sumate a una experiencia única en contacto con la naturaleza. 
+                    </p>
+                    { /*
+                    <a
+                      className="font-weight-bold text-warning mt-5"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                    >
+                      A beautiful UI Kit for impactful websites
+                    </a>
+                    */ }
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+          
+          <section className="section bg-secondary">
+            <Container>
+              <Row className="justify-content-center text-center mb-lg">
+                <Col lg="8">
+                  <h2 className="display-3">GESTIÓN DE INSTALACIONES ACUÁTICAS</h2>
+                </Col>
+              </Row>
+
+              <Row className="row-grid align-items-center">
+                <Col className="" md="6">
+                  <img
+                    alt="..."
+                    className="img-fluid floating"
+                    src={require("assets/img/theme/f.jpg")}
+                  />
+                </Col>
+                <Col md="6">
+                  <div className="pl-md-5">
+                    <div className="d-none icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
+                      <i className="ni ni-settings" />
+                    </div>
+                    <p className="lead">
+                      <b>Colegios: </b>
+                      Servicio integral de Natación para Alumno/as de Nivel Inicial y EGB. Brindamos el Taller de Natación de manera Extracurricular (optativo) y Curricular de manera articulada con el PEI de la Institución contratante. 
+                      <br />Las clases pueden ser individuales o de grupos reducidos. Todos los niveles.
+                    </p>
+                    { /*
+                    <a
+                      className="font-weight-bold text-warning mt-5"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                    >
+                      A beautiful UI Kit for impactful websites
+                    </a>
+                    */ }
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+          <section className="section section-lg">
+            <Container>
+              <Row className="row-grid align-items-center">
+                <Col className="order-md-2" md="6">
+                  <img
+                    alt="..."
+                    className="img-fluid floating"
+                    src={require("assets/img/theme/fotos/clasesBarrios.jpg")}
+                  />
+                </Col>
+                <Col md="6" className="order-md-1">
+                  <div className="pl-md-5">
+                    <div className="d-none icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
+                      <i className="ni ni-settings" />
+                    </div>
+                    <p className="lead">
+                      <b>Edificios, Clubes y Barrios cerrados: </b>
+                    </p>
+                    <p>
+                    Gracias a nuestra formación como Profesores de Ed. Física y como guardavidas, estamos habilitados para dictar clases y encargarnos de la seguridad del natatorio, como también para gestionar, administrar, publicitar y coordinar las diversas actividades. 
+                    <br />Para lo cual brindamos nuestro profesionalismo, compromiso y pasión.
+                    </p>
+                    { /*
+                    <a
+                      className="font-weight-bold text-warning mt-5"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                    >
+                      A beautiful UI Kit for impactful websites
+                    </a>
+                    */ }
                   </div>
                 </Col>
               </Row>
@@ -512,7 +719,7 @@ class Index extends React.Component {
                           <Badge color="primary" pill className="mr-1 d-none">
                             Diseño
                             </Badge>
-                          
+
                         </div>
                         <Button
                           className="mt-4 "
@@ -541,7 +748,7 @@ class Index extends React.Component {
                         <p className="description mt-3">
                           Varios colores y modelos
                           </p>
-                          <div className="" style={{ height: "40px" }}>
+                        <div className="" style={{ height: "40px" }}>
                           <Badge color="primary" pill className="mr-1">
                             Descuento
                           </Badge>
@@ -573,7 +780,7 @@ class Index extends React.Component {
                         <p className="description mt-3">
                           Varios colores y modelos
                           </p>
-                          <div className="" style={{ height: "40px" }}>
+                        <div className="" style={{ height: "40px" }}>
                           <Badge color="primary" pill className="mr-1">
                             Descuento
                           </Badge>
@@ -605,7 +812,7 @@ class Index extends React.Component {
                         <p className="description mt-3">
                           Varios colores y modelos
                           </p>
-                          <div className="" style={{ height: "40px" }}>
+                        <div className="" style={{ height: "40px" }}>
                           <Badge color="primary" pill className="mr-1 d-none">
                             Diseño
                             </Badge>
@@ -637,7 +844,7 @@ class Index extends React.Component {
                         <p className="description mt-3">
                           Varios colores y modelos
                           </p>
-                          <div className="" style={{ height: "40px" }}>
+                        <div className="" style={{ height: "40px" }}>
                           <Badge color="primary" pill className="mr-1">
                             Descuento
                           </Badge>
@@ -669,7 +876,7 @@ class Index extends React.Component {
                         <p className="description mt-3">
                           Varios colores y modelos
                           </p>
-                          <div className="" style={{ height: "40px" }}>
+                        <div className="" style={{ height: "40px" }}>
                           <Badge color="primary" pill className="mr-1">
                             Descuento
                           </Badge>

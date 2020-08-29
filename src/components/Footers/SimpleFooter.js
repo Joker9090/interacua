@@ -55,17 +55,17 @@ class SimpleFooter extends React.Component {
                     <Button
                       className="btn-icon-only rounded-circle"
                       color="info"
-                      href="#pablo"
+                      href="https://www.instagram.com/interacua"
                       onClick={e => e.preventDefault()}
                     >
-                      <i className="fa fa-twitter" />
+                      <i className="fa fa-instagram" />
                     </Button>
                   </NavItem>
                   <NavItem>
                     <Button
                       className="btn-icon-only rounded-circle ml-1"
                       color="info"
-                      href="#pablo"
+                      href="https://www.facebook.com/interacua"
                       onClick={e => e.preventDefault()}
                     >
                       <i className="fa fa-facebook" />

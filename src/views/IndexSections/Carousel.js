@@ -22,37 +22,91 @@ import { Button, Container, Row, Col, UncontrolledCarousel } from "reactstrap";
 
 const items = [
   {
-    src: require("assets/img/theme/g.jpg"),
+    src: require("assets/img/theme/fotos/galeria/g1.jpg"),
     altText: "",
     caption: "",
     header: ""
   },
   {
-    src: require("assets/img/theme/h.jpg"),
+    src: require("assets/img/theme/fotos/galeria/g2.jpg"),
     altText: "",
     caption: "",
     header: ""
   },
   {
-    src: require("assets/img/theme/a.jpeg"),
+    src: require("assets/img/theme/fotos/galeria/g3.jpg"),
     altText: "",
     caption: "",
     header: ""
   },
   {
-    src: require("assets/img/theme/f.jpeg"),
+    src: require("assets/img/theme/fotos/galeria/g4.jpg"),
     altText: "",
     caption: "",
     header: ""
   },
   {
-    src: require("assets/img/theme/e.jpeg"),
+    src: require("assets/img/theme/fotos/galeria/g5.jpg"),
     altText: "",
     caption: "",
     header: ""
   },
   {
-    src: require("assets/img/theme/d.jpg"),
+    src: require("assets/img/theme/fotos/galeria/g6.jpg"),
+    altText: "",
+    caption: "",
+    header: ""
+  },
+  {
+    src: require("assets/img/theme/fotos/galeria/g7.jpg"),
+    altText: "",
+    caption: "",
+    header: ""
+  },
+  {
+    src: require("assets/img/theme/fotos/galeria/g8.jpg"),
+    altText: "",
+    caption: "",
+    header: ""
+  },
+  {
+    src: require("assets/img/theme/fotos/galeria/g9.jpg"),
+    altText: "",
+    caption: "",
+    header: ""
+  },
+  {
+    src: require("assets/img/theme/fotos/galeria/g10.jpg"),
+    altText: "",
+    caption: "",
+    header: ""
+  },
+  {
+    src: require("assets/img/theme/fotos/galeria/g11.jpg"),
+    altText: "",
+    caption: "",
+    header: ""
+  },
+  {
+    src: require("assets/img/theme/fotos/galeria/g12.jpg"),
+    altText: "",
+    caption: "",
+    header: ""
+  },
+  {
+    src: require("assets/img/theme/fotos/galeria/g13.jpg"),
+    altText: "",
+    caption: "",
+    header: ""
+  },
+  {
+    src: require("assets/img/theme/fotos/galeria/g14.jpg"),
+    altText: "",
+    caption: "",
+    header: ""
+  },
+  {
+    src: require("assets/img/theme/fotos/galeria/g15.jpg"),
     altText: "",
     caption: "",
     header: ""
@@ -79,7 +133,7 @@ class Carousel extends React.Component {
                   Momentos
                 </h1>
                 <p className="lead text-white mt-4">
-                  Algunas de nuestras fotos para que puedas visualizar nuestra diversion.
+                  Algunas de nuestras fotos para que puedas ver nuestra diversion!
                 </p>
               </Col>
               <Col className="mb-lg-auto" lg="12">

@@ -106,9 +106,58 @@ class DemoNavbar extends React.Component {
                     </Col>
                   </Row>
                 </div>
-                
+
                 <Nav className="align-items-lg-center ml-lg-auto" navbar>
+                  <UncontrolledDropdown nav inNavbar className="d-none d-md-flex">
+                    <DropdownToggle nav>Menu</DropdownToggle>
+                    <DropdownMenu
+                      aria-labelledby="nav-inner-primary_dropdown_1"
+                      right
+                    >
+                      <DropdownItem
+                        href="#quienes-somos"
+                      >
+                        Quiénes Somos
+                            </DropdownItem>
+                      <DropdownItem
+                        href="#actividades"
+                      >
+                        Actividades
+                            </DropdownItem>
+                      <DropdownItem
+                        href="#productos"
+                      >
+                        Productos
+                      </DropdownItem>
+                      <DropdownItem
+                        href="#contacto"
+                      >
+                        Contacto
+                            </DropdownItem>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
+
                   <NavItem>
+                    <NavLink className="d-md-none"
+                      href="#quienes-somos"
+                    >
+                      Quiénes Somos
+                            </NavLink>
+                    <NavLink className="d-md-none"
+                      href="#actividades"
+                    >
+                      Actividades
+                            </NavLink>
+                    <NavLink className="d-md-none"
+                      href="#productos"
+                    >
+                      Productos
+                      </NavLink>
+                    <NavLink className="d-md-none"
+                      href="#contacto"
+                    >
+                      Contacto
+                            </NavLink>
                     <NavLink
                       className="nav-link-icon"
                       href="https://www.facebook.com/interacua"

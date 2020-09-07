@@ -118,7 +118,7 @@ class Index extends React.Component {
               </Row>
             </Container>
           </section>
-          <section className="section section-lg pt-0">
+          <section className="section section-lg pt-0" id="quienes-somos">
             <Container>
               <Row className="justify-content-center text-center mb-4 pb-3">
                 <Col xs="12">
@@ -231,7 +231,7 @@ class Index extends React.Component {
               </Row>
             </Container>
           </section>
-          <section className="section bg-secondary">
+          <section className="section bg-secondary" id="actividades">
             <Container>
               <Row className="justify-content-center text-center mb-lg">
                 <Col lg="8">
@@ -646,7 +646,7 @@ class Index extends React.Component {
               </Row>
             </Container>
           </section>
-          <div className="position-relative">
+          <div className="position-relative" >
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
               <div className="shape shape-style-1 shape-default">
@@ -693,7 +693,7 @@ class Index extends React.Component {
             </section>
             {/* 1st Hero Variation */}
           </div>
-          <section className="section section-lg pt-lg-0 mt--200">
+          <section className="section section-lg pt-lg-0 mt--200" id="productos">
             <Container>
               <Row className="row-grid">
                 <Col xs="12">
@@ -898,7 +898,7 @@ class Index extends React.Component {
             </Container>
           </section>
           <Carousel />
-          <section className="section section-lg bg-gradient-default">
+          <section className="section section-lg bg-gradient-default" id="contacto">
             <Container className="pt-lg pb-300">
               <Row className="text-center justify-content-center">
                 <Col lg="10">

@@ -97,9 +97,23 @@ class Index extends React.Component {
         <main ref="main">
           <Hero />
 
-
-          <section className="section section-lg">
+          <section className="section section-lg pt-0" id="quienes-somos">
             <Container>
+              <Row className="justify-content-center text-center mb-4 pb-3">
+                <Col xs="12">
+                  <h2 className="display-3">Quiénes somos</h2>
+                </Col>
+              </Row>
+              <Row className="justify-content-center text-center mb-lg">
+                <Col lg="8">
+                  <p className="lead text-muted">
+                    Somos un equipo de profesionales del área de la actividad física que compartimos nuestra afinidad por los deportes y, en especial, por los desafíos en el medio acuático.
+                  </p>
+                  <p className="lead text-muted">
+                    El agua es, para nosotros, un espacio de disfrute personal. Promovemos el deporte acuático con el fin de mejorar el estado físico, mantener nuestra salud, y como actividad lúdico-recreativa.
+                  </p>
+                </Col>
+              </Row>
               <Row className="justify-content-center text-center">
                 <Col lg="6">
                   <h2 className="display-3">Misión</h2>
@@ -114,15 +128,6 @@ class Index extends React.Component {
                     <br />
                     Ser un referente en nuestra zona en el brindando de actividades acuáticas para la comunidad.
                   </p>
-                </Col>
-              </Row>
-            </Container>
-          </section>
-          <section className="section section-lg pt-0" id="quienes-somos">
-            <Container>
-              <Row className="justify-content-center text-center mb-4 pb-3">
-                <Col xs="12">
-                  <h2 className="display-3">Quiénes somos</h2>
                 </Col>
               </Row>
               <Row>
@@ -143,30 +148,13 @@ class Index extends React.Component {
                             <br />
                             <small className="h6 text-muted">Guardavidas - AMGAA</small>
                           </h5>
-                          <div className="mt-3 d-none">
-                            <Button
-                              className="btn-icon-only rounded-circle"
-                              color="warning"
-                              href="#pablo"
-                              onClick={e => e.preventDefault()}
-                            >
-                              <i className="fa fa-twitter" />
-                            </Button>
+                          <div className="mt-3">
                             <Button
                               className="btn-icon-only rounded-circle ml-1"
                               color="warning"
-                              href="#pablo"
-                              onClick={e => e.preventDefault()}
+                              href="http://www.linkedin.com/in/sebastianvalente"
                             >
-                              <i className="fa fa-facebook" />
-                            </Button>
-                            <Button
-                              className="btn-icon-only rounded-circle ml-1"
-                              color="warning"
-                              href="#pablo"
-                              onClick={e => e.preventDefault()}
-                            >
-                              <i className="fa fa-dribbble" />
+                              <i className="fa fa-linkedin" />
                             </Button>
                           </div>
                         </div>
@@ -219,16 +207,7 @@ class Index extends React.Component {
                   </Slider>
                 </Col>
               </Row>
-              <Row className="justify-content-center text-center mb-lg">
-                <Col lg="8">
-                  <p className="lead text-muted">
-                    Somos un equipo de profesionales del área de la actividad física que compartimos nuestra afinidad por los deportes y, en especial, por los desafíos en el medio acuático.
-                  </p>
-                  <p className="lead text-muted">
-                    El agua es, para nosotros, un espacio de disfrute personal. Promovemos el deporte acuático con el fin de mejorar el estado físico, mantener nuestra salud, y como actividad lúdico-recreativa.
-                  </p>
-                </Col>
-              </Row>
+              
             </Container>
           </section>
           <section className="section bg-secondary" id="actividades">
@@ -291,6 +270,10 @@ class Index extends React.Component {
                     </div>
                     <p className="lead">
                       <b>Colonia Rodante: </b>
+                      “¡Una colonia a domicilio! formada por grupos reducidos que realizamos durante los recesos escolares. <br />
+                      Una propuesta flexible que se adapta a las necesidades del grupo y del lugar. <br /> 
+                      Realizamos actividades en pileta, actividades de agua (fuera de la pileta), 
+                      arte, expresión corporal, talleres, distintos tipos de juegos y mucho mas. 
                     </p>
                     { /*
                     <a

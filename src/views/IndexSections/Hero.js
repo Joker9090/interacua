@@ -50,8 +50,8 @@ class Hero extends React.Component {
                       src={require("assets/img/brand/argon-react-white.png")}
                       style={{ width: "300px" }}
                     />
-                    <p className="lead text-white">
-                      Centro de actividades acuáticas de la Argentina
+                    <p className="lead text-white d-none">
+                      Slogan Text
                     </p>
                   </Col>
                 </Row>

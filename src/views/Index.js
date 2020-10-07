@@ -39,7 +39,7 @@ class Index extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
     const self = this;
-    CustomAction('productos').then((r) => {
+    CustomAction('productos?activo=true').then((r) => {
       console.log('productos!', r);
       setTimeout(() => {
         self.setState({
@@ -109,8 +109,8 @@ class Index extends React.Component {
     return text.split(' ').join('%20');
   }
 
-  goToWhatsapp = (text) => {
-    return text.split(' ').join('%20');
+  goToWhatsapp = (number, text) => {
+    window.open(`https://wa.me/${number}?text=${text}`);
   }
 
   render() {

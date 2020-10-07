@@ -1,3 +1,37 @@
 :focus {
   outline: none;
 }
+
+.CardShimmerHolder {
+  display: flex;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.CardShimmer {
+  height: 490px;
+  width: 33%;
+  background-color: #d6d6d6;
+  margin: 15px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px grey;
+
+  animation: shimmer 2s infinite;
+  background: linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);
+  background-size: 1000px 100%;
+}
+
+.navbar-brand img { height: 100px; }
+.headroom--not-top {
+  .navbar-brand img {
+    transition: height 0.2s 1s;
+    height: 75px;
+  }
+}

@@ -28,13 +28,28 @@ import classnames from "classnames";
 import Hero from "./IndexSections/Hero.js";
 import Carousel from "./IndexSections/Carousel.js";
 import Slider from "react-slick";
+import CustomAction, { baseAssetsUrl } from "./../actions/customAction";
+
 
 class Index extends React.Component {
-  state = {};
+  state = {
+  };
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
+    const self = this;
+    CustomAction('productos').then((r) => {
+      console.log('productos!', r);
+      setTimeout(() => {
+        self.setState({
+          productos: r.data,
+        });
+      }, 2000);
+    }).catch((e) => {
+      console.log('e', e);
+    });
+
   }
 
   settings = {
@@ -90,6 +105,14 @@ class Index extends React.Component {
     ],
   };
 
+  buildText = (text) => {
+    return text.split(' ').join('%20');
+  }
+
+  goToWhatsapp = (text) => {
+    return text.split(' ').join('%20');
+  }
+
   render() {
     return (
       <>
@@ -124,7 +147,7 @@ class Index extends React.Component {
                 <Col lg="6">
                   <h2 className="display-3">Visión</h2>
                   <p className="lead text-muted">
-                    Acercar el medio acuático de una manera CONFIABLE y DURADERA cada vez a más personas.
+                    Acercar el medio acuático de una manera <b>CONFIABLE&nbsp;y&nbsp;DURADERA</b> cada vez a más personas.
                     <br />
                     Ser un referente en nuestra zona en el brindando de actividades acuáticas para la comunidad.
                   </p>
@@ -171,34 +194,17 @@ class Index extends React.Component {
                         <div className="pt-4 text-center">
                           <h5 className="title">
                             <span className="d-block mb-1">Pablo Ponomareff</span>
-                            <small className="h6 text-muted">Prof.  Nacional de Educación Física - ISEF N*2</small>
+                            <small className="h6 text-muted">Prof.  Nacional de Educación Física - ISEF N°2</small>
                             <br />
                             <small className="h6 text-muted">Guardavidas - AMGAA</small>
                           </h5>
-                          <div className="mt-3 d-none">
-                            <Button
-                              className="btn-icon-only rounded-circle"
-                              color="primary"
-                              href="#pablo"
-                              onClick={e => e.preventDefault()}
-                            >
-                              <i className="fa fa-twitter" />
-                            </Button>
+                          <div className="mt-3">
                             <Button
                               className="btn-icon-only rounded-circle ml-1"
                               color="primary"
-                              href="#pablo"
-                              onClick={e => e.preventDefault()}
+                              href="http://www.linkedin.com/in/pponomareff"
                             >
-                              <i className="fa fa-facebook" />
-                            </Button>
-                            <Button
-                              className="btn-icon-only rounded-circle ml-1"
-                              color="primary"
-                              href="#pablo"
-                              onClick={e => e.preventDefault()}
-                            >
-                              <i className="fa fa-dribbble" />
+                              <i className="fa fa-linkedin" />
                             </Button>
                           </div>
                         </div>
@@ -207,7 +213,7 @@ class Index extends React.Component {
                   </Slider>
                 </Col>
               </Row>
-              
+
             </Container>
           </section>
           <section className="section bg-secondary" id="actividades">
@@ -271,9 +277,9 @@ class Index extends React.Component {
                     <p className="lead">
                       <b>Colonia Rodante: </b>
                       “¡Una colonia a domicilio! formada por grupos reducidos que realizamos durante los recesos escolares. <br />
-                      Una propuesta flexible que se adapta a las necesidades del grupo y del lugar. <br /> 
-                      Realizamos actividades en pileta, actividades de agua (fuera de la pileta), 
-                      arte, expresión corporal, talleres, distintos tipos de juegos y mucho mas. 
+                      Una propuesta flexible que se adapta a las necesidades del grupo y del lugar. <br />
+                      Realizamos actividades en pileta, actividades de agua (fuera de la pileta),
+                      arte, expresión corporal, talleres, distintos tipos de juegos y mucho mas.
                     </p>
                     { /*
                     <a
@@ -357,7 +363,7 @@ class Index extends React.Component {
               </Row>
             </Container>
           </section>
-          
+
           <section className="section section-lg">
             <Container>
 
@@ -426,7 +432,7 @@ class Index extends React.Component {
 
           <section className="section section-lg">
             <Container>
-            <Row className="justify-content-center text-center mb-lg">
+              <Row className="justify-content-center text-center mb-lg">
                 <Col lg="8">
                   <h2 className="display-3">EVENTOS Y FIESTAS ACUÁTICAS</h2>
                 </Col>
@@ -447,8 +453,8 @@ class Index extends React.Component {
                     </div>
                     <p className="lead">
                       <b>Cumpleaños acuáticos: </b>
-                      La forma más divertida de festejar tu cumpleaños. Una propuesta original,  con o sin pileta, te ofrecemos las mejores actividades con agua y terrestres para jugar y divertirse.. 
-                      <br />Incluye material deportivo y Profes de Ed. Física que para ponerle la mejor onda a la fiesta. 
+                      La forma más divertida de festejar tu cumpleaños. Una propuesta original,  con o sin pileta, te ofrecemos las mejores actividades con agua y terrestres para jugar y divertirse..
+                      <br />Incluye material deportivo y Profes de Ed. Física que para ponerle la mejor onda a la fiesta.
                     </p>
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
@@ -516,10 +522,10 @@ class Index extends React.Component {
               </Row>
             </Container>
           </section>
-          
+
           <section className="section bg-secondary">
             <Container>
-              
+
               <Row className="row-grid align-items-center">
                 <Col className="order-md-2" md="6">
                   <img
@@ -535,8 +541,8 @@ class Index extends React.Component {
                     </div>
                     <p className="lead">
                       <b>Jornadas náuticas: </b>
-                      No te pierdas nuestro  ¨Adventure Day¨. Una jornada náutica al aire libre llena de buenos momentos. Brindamos de acuerdo al tipo de actividad, salidas en Kayaks, SUP e iniciación al Windsurf. 
-                      <br />Están pensadas para que todos/as puedan participar y disfrutar sin conocimientos previos. Sumate a una experiencia única en contacto con la naturaleza. 
+                      No te pierdas nuestro  ¨Adventure Day¨. Una jornada náutica al aire libre llena de buenos momentos. Brindamos de acuerdo al tipo de actividad, salidas en Kayaks, SUP e iniciación al Windsurf.
+                      <br />Están pensadas para que todos/as puedan participar y disfrutar sin conocimientos previos. Sumate a una experiencia única en contacto con la naturaleza.
                     </p>
                     { /*
                     <a
@@ -552,7 +558,7 @@ class Index extends React.Component {
               </Row>
             </Container>
           </section>
-          
+
           <section className="section bg-secondary">
             <Container>
               <Row className="justify-content-center text-center mb-lg">
@@ -576,7 +582,7 @@ class Index extends React.Component {
                     </div>
                     <p className="lead">
                       <b>Colegios: </b>
-                      Servicio integral de Natación para Alumno/as de Nivel Inicial y EGB. Brindamos el Taller de Natación de manera Extracurricular (optativo) y Curricular de manera articulada con el PEI de la Institución contratante. 
+                      Servicio integral de Natación para Alumno/as de Nivel Inicial y EGB. Brindamos el Taller de Natación de manera Extracurricular (optativo) y Curricular de manera articulada con el PEI de la Institución contratante.
                       <br />Las clases pueden ser individuales o de grupos reducidos. Todos los niveles.
                     </p>
                     { /*
@@ -612,7 +618,7 @@ class Index extends React.Component {
                       <b>Edificios, Clubes y Barrios cerrados: </b>
                     </p>
                     <p>
-                    Gracias a nuestra formación como Profesores de Ed. Física y como guardavidas, estamos habilitados para dictar clases y encargarnos de la seguridad del natatorio, como también para gestionar, administrar, publicitar y coordinar las diversas actividades. 
+                      Gracias a nuestra formación como Profesores de Ed. Física y como guardavidas, estamos habilitados para dictar clases y encargarnos de la seguridad del natatorio, como también para gestionar, administrar, publicitar y coordinar las diversas actividades.
                     <br />Para lo cual brindamos nuestro profesionalismo, compromiso y pasión.
                     </p>
                     { /*
@@ -629,257 +635,112 @@ class Index extends React.Component {
               </Row>
             </Container>
           </section>
-          <div className="position-relative" >
-            {/* shape Hero */}
-            <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 shape-default">
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
+          {(!this.state.productos || this.state.productos.length !== 0) && (
+            <>
+              <div className="position-relative">
+                {/* shape Hero */}
+                <section className="section section-lg section-shaped pb-250">
+                  <div className="shape shape-style-1 shape-default">
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                  <Container className="py-lg-md d-flex">
+                    <div className="col px-0">
+                      <Row>
+                        <Col lg="6">
+                          <h1 className="display-3 text-white">
+                            Nuestros Productos{" "}
+                          </h1>
+                          <p className="lead text-white">
+                            Los productos estan limitados stock. Nos comunicaremos por WhatsApp para concordar el pago y el envio.
+                          </p>
+                        </Col>
+                      </Row>
+                    </div>
+                  </Container>
+                  {/* SVG separator */}
+                  <div className="separator separator-bottom separator-skew">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      preserveAspectRatio="none"
+                      version="1.1"
+                      viewBox="0 0 2560 100"
+                      x="0"
+                      y="0"
+                    >
+                      <polygon
+                        className="fill-white"
+                        points="2560 0 2560 100 0 100"
+                      />
+                    </svg>
+                  </div>
+                </section>
+                {/* 1st Hero Variation */}
               </div>
-              <Container className="py-lg-md d-flex">
-                <div className="col px-0">
-                  <Row>
-                    <Col lg="6">
-                      <h1 className="display-3 text-white">
-                        Nuestros Productos{" "}
-                      </h1>
-                      <p className="lead text-white">
-                        Los productos estan limitados stock. Nos comunicaremos por WhatsApp para concordar el pago y el envio.
-                      </p>
+              <section className="section section-lg pt-lg-0 mt--200" id="productos">
+                <Container>
+                  <Row className="row-grid">
+                    <Col xs="12">
+                      {(this.state.productos ? (
+                        <Slider {...this.settings}>
+                          {this.state.productos.map(producto => (
+                            <Card className="card-lift--hover slider-card shadow border-0">
+                              <CardBody className="py-5 mx-auto text-center">
+                                <div className="d-none icon icon-shape icon-shape-primary rounded-circle mb-4">
+                                  <i className="ni ni-check-bold" />
+                                </div>
+                                {producto.Imagen_portada && (
+                                  <img
+                                    alt="..."
+                                    className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                                    src={baseAssetsUrl + producto.Imagen_portada.url}
+                                    style={{ width: "200px", height: "200px" }}
+                                  />
+                                )}
+                                <h6 className="text-primary text-uppercase mt-2">
+                                  {producto.Titulo}
+                                </h6>
+                                <p className="description mt-3">
+                                  {producto.Descripcion}
+                                </p>
+                                <div className="" style={{ height: "40px" }}>
+                                  <Badge color="primary" pill className="mr-1 d-none"> Descuento </Badge>
+                                </div>
+                                {producto.numeroWhatsapp && (
+                                  <Button
+                                    className="mt-4 "
+                                    color="primary"
+                                    href="#'"
+                                    onClick={() => this.goToWhatsapp(producto.numeroWhatsapp, this.buildText(`Hola! Que tal? Me interesa ${producto.Titulo}`))}
+                                  >
+                                    Lo quiero
+                                  </Button>
+                                )}
+                              </CardBody>
+                            </Card>
+                          ))}
+
+                        </Slider>
+                      ) : (
+                          <div className="CardShimmerHolder">
+                            <div className="CardShimmer" />
+                            <div className="CardShimmer" />
+                            <div className="CardShimmer" />
+                          </div>
+                        ))}
                     </Col>
                   </Row>
-                </div>
-              </Container>
-              {/* SVG separator */}
-              <div className="separator separator-bottom separator-skew">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  preserveAspectRatio="none"
-                  version="1.1"
-                  viewBox="0 0 2560 100"
-                  x="0"
-                  y="0"
-                >
-                  <polygon
-                    className="fill-white"
-                    points="2560 0 2560 100 0 100"
-                  />
-                </svg>
-              </div>
-            </section>
-            {/* 1st Hero Variation */}
-          </div>
-          <section className="section section-lg pt-lg-0 mt--200" id="productos">
-            <Container>
-              <Row className="row-grid">
-                <Col xs="12">
-                  <Slider {...this.settings}>
-                    <Card className="card-lift--hover slider-card shadow border-0">
-                      <CardBody className="py-5 mx-auto text-center">
-                        <div className="d-none icon icon-shape icon-shape-primary rounded-circle mb-4">
-                          <i className="ni ni-check-bold" />
-                        </div>
-                        <img
-                          alt="..."
-                          className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                          src={require("assets/img/theme/P1.jpeg")}
-                          style={{ width: "200px", height: "200px" }}
-                        />
-                        <h6 className="text-primary text-uppercase mt-2">
-                          Antiparras
-                          </h6>
-                        <p className="description mt-3">
-                          Varios colores y modelos
-                          </p>
-                        <div className="" style={{ height: "40px" }}>
-                          <Badge color="primary" pill className="mr-1 d-none">
-                            Diseño
-                            </Badge>
-
-                        </div>
-                        <Button
-                          className="mt-4 "
-                          color="primary"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          Lo quiero
-                          </Button>
-                      </CardBody>
-                    </Card>
-                    <Card className="card-lift--hover slider-card shadow border-0">
-                      <CardBody className="py-5 mx-auto text-center">
-                        <div className="d-none icon icon-shape icon-shape-primary rounded-circle mb-4">
-                          <i className="ni ni-check-bold" />
-                        </div>
-                        <img
-                          alt="..."
-                          className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                          src={require("assets/img/theme/P2.jpeg")}
-                          style={{ width: "200px", height: "200px" }}
-                        />
-                        <h6 className="text-primary text-uppercase mt-2">
-                          Gorras
-                          </h6>
-                        <p className="description mt-3">
-                          Varios colores y modelos
-                          </p>
-                        <div className="" style={{ height: "40px" }}>
-                          <Badge color="primary" pill className="mr-1">
-                            Descuento
-                          </Badge>
-                        </div>
-                        <Button
-                          className="mt-4 "
-                          color="primary"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          Lo quiero
-                          </Button>
-                      </CardBody>
-                    </Card>
-                    <Card className="card-lift--hover slider-card shadow border-0">
-                      <CardBody className="py-5 mx-auto text-center">
-                        <div className="d-none icon icon-shape icon-shape-primary rounded-circle mb-4">
-                          <i className="ni ni-check-bold" />
-                        </div>
-                        <img
-                          alt="..."
-                          className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                          src={require("assets/img/theme/P3.jpeg")}
-                          style={{ width: "200px", height: "200px" }}
-                        />
-                        <h6 className="text-primary text-uppercase mt-2">
-                          Antiparras
-                          </h6>
-                        <p className="description mt-3">
-                          Varios colores y modelos
-                          </p>
-                        <div className="" style={{ height: "40px" }}>
-                          <Badge color="primary" pill className="mr-1">
-                            Descuento
-                          </Badge>
-                        </div>
-                        <Button
-                          className="mt-4 "
-                          color="primary"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          Lo quiero
-                          </Button>
-                      </CardBody>
-                    </Card>
-                    <Card className="card-lift--hover slider-card shadow border-0">
-                      <CardBody className="py-5 mx-auto text-center">
-                        <div className="d-none icon icon-shape icon-shape-primary rounded-circle mb-4">
-                          <i className="ni ni-check-bold" />
-                        </div>
-                        <img
-                          alt="..."
-                          className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                          src={require("assets/img/theme/P1.jpeg")}
-                          style={{ width: "200px", height: "200px" }}
-                        />
-                        <h6 className="text-primary text-uppercase mt-2">
-                          Antiparras
-                          </h6>
-                        <p className="description mt-3">
-                          Varios colores y modelos
-                          </p>
-                        <div className="" style={{ height: "40px" }}>
-                          <Badge color="primary" pill className="mr-1 d-none">
-                            Diseño
-                            </Badge>
-                        </div>
-                        <Button
-                          className="mt-4 "
-                          color="primary"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          Lo quiero
-                          </Button>
-                      </CardBody>
-                    </Card>
-                    <Card className="card-lift--hover slider-card shadow border-0">
-                      <CardBody className="py-5 mx-auto text-center">
-                        <div className="d-none icon icon-shape icon-shape-primary rounded-circle mb-4">
-                          <i className="ni ni-check-bold" />
-                        </div>
-                        <img
-                          alt="..."
-                          className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                          src={require("assets/img/theme/P2.jpeg")}
-                          style={{ width: "200px", height: "200px" }}
-                        />
-                        <h6 className="text-primary text-uppercase mt-2">
-                          Gorras
-                          </h6>
-                        <p className="description mt-3">
-                          Varios colores y modelos
-                          </p>
-                        <div className="" style={{ height: "40px" }}>
-                          <Badge color="primary" pill className="mr-1">
-                            Descuento
-                          </Badge>
-                        </div>
-                        <Button
-                          className="mt-4 "
-                          color="primary"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          Lo quiero
-                          </Button>
-                      </CardBody>
-                    </Card>
-                    <Card className="card-lift--hover slider-card shadow border-0">
-                      <CardBody className="py-5 mx-auto text-center">
-                        <div className="d-none icon icon-shape icon-shape-primary rounded-circle mb-4">
-                          <i className="ni ni-check-bold" />
-                        </div>
-                        <img
-                          alt="..."
-                          className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                          src={require("assets/img/theme/P3.jpeg")}
-                          style={{ width: "200px", height: "200px" }}
-                        />
-                        <h6 className="text-primary text-uppercase mt-2">
-                          Antiparras
-                          </h6>
-                        <p className="description mt-3">
-                          Varios colores y modelos
-                          </p>
-                        <div className="" style={{ height: "40px" }}>
-                          <Badge color="primary" pill className="mr-1">
-                            Descuento
-                          </Badge>
-                        </div>
-                        <Button
-                          className="mt-4 "
-                          color="primary"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                        >
-                          Lo quiero
-                          </Button>
-                      </CardBody>
-                    </Card>
-
-                  </Slider>
-                </Col>
-              </Row>
-            </Container>
-          </section>
+                </Container>
+              </section>
+            </>
+          )}
           <Carousel />
           <section className="section section-lg bg-gradient-default" id="contacto">
             <Container className="pt-lg pb-300">
@@ -992,3 +853,5 @@ class Index extends React.Component {
 }
 
 export default Index;
+
+

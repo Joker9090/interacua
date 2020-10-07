@@ -110,8 +110,45 @@ class Index extends React.Component {
   }
 
   goToWhatsapp = (number, text) => {
-    window.open(`https://wa.me/${number}?text=${text}`);
+    window.open(`https://wa.me/54${number}?text=${text}`);
   }
+
+  buildProduct = (producto) => (
+    <Card className="card-lift--hover slider-card shadow border-0">
+      <CardBody className="py-5 mx-auto text-center">
+        <div className="d-none icon icon-shape icon-shape-primary rounded-circle mb-4">
+          <i className="ni ni-check-bold" />
+        </div>
+        {producto.Imagen_portada && (
+          <img
+            alt="..."
+            className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+            src={baseAssetsUrl + producto.Imagen_portada.url}
+            style={{ width: "200px", height: "200px" }}
+          />
+        )}
+        <h6 className="text-primary text-uppercase mt-2">
+          {producto.Titulo}
+        </h6>
+        <p className="description mt-3">
+          {producto.Descripcion}
+        </p>
+        <div className="" style={{ height: "40px" }}>
+          <Badge color="primary" pill className="mr-1 d-none"> Descuento </Badge>
+        </div>
+        {producto.numeroWhatsapp && (
+          <Button
+            className="mt-4 "
+            color="primary"
+            href="#'"
+            onClick={() => this.goToWhatsapp(producto.numeroWhatsapp, this.buildText(`Hola! Que tal? Me interesa ${producto.Titulo}`))}
+          >
+            Lo quiero
+          </Button>
+        )}
+      </CardBody>
+    </Card>
+  );
 
   render() {
     return (
@@ -689,45 +726,23 @@ class Index extends React.Component {
                   <Row className="row-grid">
                     <Col xs="12">
                       {(this.state.productos ? (
-                        <Slider {...this.settings}>
-                          {this.state.productos.map(producto => (
-                            <Card className="card-lift--hover slider-card shadow border-0">
-                              <CardBody className="py-5 mx-auto text-center">
-                                <div className="d-none icon icon-shape icon-shape-primary rounded-circle mb-4">
-                                  <i className="ni ni-check-bold" />
-                                </div>
-                                {producto.Imagen_portada && (
-                                  <img
-                                    alt="..."
-                                    className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                                    src={baseAssetsUrl + producto.Imagen_portada.url}
-                                    style={{ width: "200px", height: "200px" }}
-                                  />
-                                )}
-                                <h6 className="text-primary text-uppercase mt-2">
-                                  {producto.Titulo}
-                                </h6>
-                                <p className="description mt-3">
-                                  {producto.Descripcion}
-                                </p>
-                                <div className="" style={{ height: "40px" }}>
-                                  <Badge color="primary" pill className="mr-1 d-none"> Descuento </Badge>
-                                </div>
-                                {producto.numeroWhatsapp && (
-                                  <Button
-                                    className="mt-4 "
-                                    color="primary"
-                                    href="#'"
-                                    onClick={() => this.goToWhatsapp(producto.numeroWhatsapp, this.buildText(`Hola! Que tal? Me interesa ${producto.Titulo}`))}
-                                  >
-                                    Lo quiero
-                                  </Button>
-                                )}
-                              </CardBody>
-                            </Card>
-                          ))}
-
-                        </Slider>
+                        <>
+                          {this.state.productos.length > 3 ? (
+                            <Slider {...this.settings}>
+                              {this.state.productos.map(producto => (
+                                this.buildProduct(producto)
+                              ))}
+                            </Slider>
+                          ) : (
+                              <Row className="row-grid">
+                                {this.state.productos.map(producto => (
+                                  <Col xs="12" md="4">
+                                    {this.buildProduct(producto)}
+                                  </Col>
+                                ))}
+                              </Row>
+                            )}
+                        </>
                       ) : (
                           <div className="CardShimmerHolder">
                             <div className="CardShimmer" />

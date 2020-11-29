@@ -48,6 +48,7 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "@formcarry/react": "^1.0.2",
     "axios": "^0.19.2",
     "bootstrap": "4.3.1",
     "classnames": "2.2.6",

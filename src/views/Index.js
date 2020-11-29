@@ -15,11 +15,11 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React, { useState } from "react";
 
 // reactstrap components
 import { Container, Row, Col, Button, Badge, Card, CardImg, CardBody, InputGroup, InputGroupAddon, InputGroupText, Input, FormGroup } from "reactstrap";
-
+import { useForm } from '@formcarry/react';
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
@@ -427,7 +427,7 @@ class Index extends React.Component {
                     <p>
                       (Consulta sedes disponibles)
                     </p>
-                    <ul className="list-unstyled mt-5">
+                    <ul className="list-unstyled mt-5 d-none">
                       <li className="py-2">
                         <div className="d-flex align-items-center">
                           <div>
@@ -792,70 +792,7 @@ class Index extends React.Component {
             <Container>
               <Row className="justify-content-center mt--300">
                 <Col lg="8">
-                  <Card className="bg-gradient-secondary shadow">
-                    <CardBody className="p-lg-5">
-                      <h4 className="mb-1">Escribenos tu mensaje</h4>
-                      <FormGroup
-                        className={classnames("mt-5", {
-                          focused: this.state.nameFocused
-                        })}
-                      >
-                        <InputGroup className="input-group-alternative">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-user-run" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder="Nombre"
-                            type="text"
-                            onFocus={e => this.setState({ nameFocused: true })}
-                            onBlur={e => this.setState({ nameFocused: false })}
-                          />
-                        </InputGroup>
-                      </FormGroup>
-                      <FormGroup
-                        className={classnames({
-                          focused: this.state.emailFocused
-                        })}
-                      >
-                        <InputGroup className="input-group-alternative">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-email-83" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder="Correo Electronico"
-                            type="email"
-                            onFocus={e => this.setState({ emailFocused: true })}
-                            onBlur={e => this.setState({ emailFocused: false })}
-                          />
-                        </InputGroup>
-                      </FormGroup>
-                      <FormGroup className="mb-4">
-                        <Input
-                          className="form-control-alternative"
-                          cols="80"
-                          name="name"
-                          placeholder="Mensaje..."
-                          rows="4"
-                          type="textarea"
-                        />
-                      </FormGroup>
-                      <div>
-                        <Button
-                          block
-                          className="btn-round"
-                          color="default"
-                          size="lg"
-                          type="button"
-                        >
-                          Enviar
-                        </Button>
-                      </div>
-                    </CardBody>
-                  </Card>
+                  <Form />
                 </Col>
               </Row>
             </Container>
@@ -867,6 +804,91 @@ class Index extends React.Component {
   }
 }
 
+
+function Form() {
+  const [nameFocused, setNameFocused] = useState(false);
+  const [emailFocused, setEmailFocused] = useState(false);
+  const { state, submit } = useForm({
+    id: 'nvTG0P-GEw'
+  });
+
+  // Success message
+  if (state.submitted) {
+    return <div>Gracias por tu mensaje</div>;
+  }
+  return (
+    <Card className="bg-gradient-secondary shadow">
+      <CardBody className="p-lg-5">
+        <form onSubmit={submit}>
+          <h4 className="mb-1">Escribenos tu mensaje</h4>
+          <FormGroup
+            className={classnames("mt-5", { focused: nameFocused })}
+          >
+            <InputGroup className="input-group-alternative">
+              <InputGroupAddon addonType="prepend">
+                <InputGroupText>
+                  <i className="ni ni-user-run" />
+                </InputGroupText>
+              </InputGroupAddon>
+              <Input
+                id="name"
+                placeholder="Nombre"
+                type="text"
+                name="Nombre"
+                onFocus={e => setNameFocused(true)}
+                onBlur={e => setNameFocused(false)}
+              />
+            </InputGroup>
+          </FormGroup>
+          <FormGroup
+            className={classnames({
+              focused: emailFocused
+            })}
+          >
+            <InputGroup className="input-group-alternative">
+              <InputGroupAddon addonType="prepend">
+                <InputGroupText>
+                  <i className="ni ni-email-83" />
+                </InputGroupText>
+              </InputGroupAddon>
+              <Input
+                placeholder="Correo Electronico"
+                type="email"
+                name="Email"
+                id="email"
+                onFocus={e => setEmailFocused(true)}
+                onBlur={e => setEmailFocused(false)}
+              />
+            </InputGroup>
+          </FormGroup>
+          <FormGroup className="mb-4">
+            <Input
+              className="form-control-alternative"
+              cols="80"
+              name="Mensaje"
+              id="mensaje"
+              placeholder="Mensaje..."
+              rows="4"
+              type="textarea"
+            />
+          </FormGroup>
+          <div>
+            <Button
+              block
+              className="btn-round"
+              color="default"
+              size="lg"
+              type="submit"
+            >
+              Enviar
+          </Button>
+          </div>
+        </form>
+      </CardBody>
+    </Card>
+  );
+
+}
 export default Index;
 
 

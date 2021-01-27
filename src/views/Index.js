@@ -282,6 +282,16 @@ class Index extends React.Component {
                       Nos trasladamos hasta tu domicilio  con todos los materiales necesarios. La cantidad de sesiones por semana y el horario son a convenir.
                       <br />Las clases pueden ser individuales o de grupos reducidos. Todos los niveles.
                     </p>
+                    <Button
+                      block
+                      className="btn-round"
+                      color="default"
+                      size="lg"
+                      type="button"
+                      onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSdVw0zlovkLRAe41seHSeGHeEkg8M9KU40ZjuD8IELR9bGbpw/viewform?usp=sf_link")}
+                    >
+                      Preinscripcion
+                    </Button>
                     { /*
                     <a
                       className="font-weight-bold text-warning mt-5"
@@ -425,7 +435,15 @@ class Index extends React.Component {
                     </div>
                     <h3>Clases de natación para niños, adolescentes y adultos </h3>
                     <p>
-                      (Consulta sedes disponibles)
+                      <Button
+                        className="mt-4 "
+                        color="primary"
+                        href="#'"
+                        onClick={() => this.goToWhatsapp("541150133314", this.buildText(`Hola! Quiero saber las sedes disponibles`))}
+                      >
+                        (Consulta sedes disponibles)
+                      </Button>
+
                     </p>
                     <ul className="list-unstyled mt-5 d-none">
                       <li className="py-2">
@@ -581,6 +599,16 @@ class Index extends React.Component {
                       No te pierdas nuestro  ¨Adventure Day¨. Una jornada náutica al aire libre llena de buenos momentos. Brindamos de acuerdo al tipo de actividad, salidas en Kayaks, SUP e iniciación al Windsurf.
                       <br />Están pensadas para que todos/as puedan participar y disfrutar sin conocimientos previos. Sumate a una experiencia única en contacto con la naturaleza.
                     </p>
+                    <Button
+                      block
+                      className="btn-round"
+                      color="default"
+                      size="lg"
+                      type="button"
+                      onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSdVw0zlovkLRAe41seHSeGHeEkg8M9KU40ZjuD8IELR9bGbpw/viewform?usp=sf_link")}
+                    >
+                      Preinscripcion
+                    </Button>
                     { /*
                     <a
                       className="font-weight-bold text-warning mt-5"
@@ -698,6 +726,7 @@ class Index extends React.Component {
                           <p className="lead text-white">
                             Los productos estan limitados stock. Nos comunicaremos por WhatsApp para concordar el pago y el envio.
                           </p>
+                          <a style={{color: "white", "text-decoration": "underline" }} href="https://drive.google.com/file/d/1RInYP5CNODjo_Iwkmqz0a-18wgWKPsVn/view?usp=sharing" rel="noopener noreferrer" target="_blank">Guia de recomendaciones para padres y madres</a>
                         </Col>
                       </Row>
                     </div>
@@ -753,10 +782,11 @@ class Index extends React.Component {
                     </Col>
                   </Row>
                 </Container>
+                <Carousel />
               </section>
             </>
           )}
-          <Carousel />
+          
           <section className="section section-lg bg-gradient-default" id="contacto">
             <Container className="pt-lg pb-300">
               <Row className="text-center justify-content-center">

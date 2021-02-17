@@ -288,7 +288,7 @@ class Index extends React.Component {
                       color="default"
                       size="lg"
                       type="button"
-                      onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSe-rNfVciAvwvz42phDOGkwBEWhOvK1PBEl3UVpkHQ-2YlfaQ/viewform?usp=sf_link")}
+                      onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSdVw0zlovkLRAe41seHSeGHeEkg8M9KU40ZjuD8IELR9bGbpw/viewform?usp=sf_link")}
                     >
                       Preinscripcion
                     </Button>
@@ -605,7 +605,7 @@ class Index extends React.Component {
                       color="default"
                       size="lg"
                       type="button"
-                      onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSdVw0zlovkLRAe41seHSeGHeEkg8M9KU40ZjuD8IELR9bGbpw/viewform?usp=sf_link")}
+                      onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSe-rNfVciAvwvz42phDOGkwBEWhOvK1PBEl3UVpkHQ-2YlfaQ/viewform?usp=sf_link")}
                     >
                       Preinscripcion
                     </Button>

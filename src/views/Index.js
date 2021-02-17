@@ -288,7 +288,7 @@ class Index extends React.Component {
                       color="default"
                       size="lg"
                       type="button"
-                      onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSdVw0zlovkLRAe41seHSeGHeEkg8M9KU40ZjuD8IELR9bGbpw/viewform?usp=sf_link")}
+                      onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSe-rNfVciAvwvz42phDOGkwBEWhOvK1PBEl3UVpkHQ-2YlfaQ/viewform?usp=sf_link")}
                     >
                       Preinscripcion
                     </Button>
@@ -441,7 +441,7 @@ class Index extends React.Component {
                         href="#'"
                         onClick={() => this.goToWhatsapp("541150133314", this.buildText(`Hola! Quiero saber las sedes disponibles`))}
                       >
-                        (Consulta sedes disponibles)
+                        Consulta sedes disponibles
                       </Button>
 
                     </p>
@@ -509,7 +509,7 @@ class Index extends React.Component {
                     <p className="lead">
                       <b>Cumpleaños acuáticos: </b>
                       La forma más divertida de festejar tu cumpleaños. Una propuesta original,  con o sin pileta, te ofrecemos las mejores actividades con agua y terrestres para jugar y divertirse..
-                      <br />Incluye material deportivo y Profes de Ed. Física que para ponerle la mejor onda a la fiesta.
+                      <br />Incluye material deportivo y Profes de Ed. Física para ponerle la mejor onda a la fiesta.
                     </p>
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
@@ -726,7 +726,7 @@ class Index extends React.Component {
                           <p className="lead text-white">
                             Los productos estan limitados stock. Nos comunicaremos por WhatsApp para concordar el pago y el envio.
                           </p>
-                          <a style={{color: "white", "text-decoration": "underline" }} href="https://drive.google.com/file/d/1RInYP5CNODjo_Iwkmqz0a-18wgWKPsVn/view?usp=sharing" rel="noopener noreferrer" target="_blank">Guia de recomendaciones para padres y madres</a>
+                          <b><a style={{color: "white", "text-decoration": "underline", 'font-size': "20px" }} href="https://drive.google.com/file/d/1RInYP5CNODjo_Iwkmqz0a-18wgWKPsVn/view?usp=sharing" rel="noopener noreferrer" target="_blank">Guia de recomendaciones para padres y madres</a></b>
                         </Col>
                       </Row>
                     </div>

@@ -130,10 +130,16 @@ class Index extends React.Component {
         <h6 className="text-primary text-uppercase mt-2">
           {producto.Titulo}
         </h6>
+        {producto.price && (
+          <p className="price mt-3">
+            ${producto.price}
+          </p>
+        )}
         <p className="description mt-3">
           {producto.Descripcion}
         </p>
-        <div className="" style={{ height: "40px" }}>
+        
+        <div className="" style={{ height: "10px" }}>
           <Badge color="primary" pill className="mr-1 d-none"> Descuento </Badge>
         </div>
         {producto.numeroWhatsapp && (
@@ -721,12 +727,16 @@ class Index extends React.Component {
                       <Row>
                         <Col lg="6">
                           <h1 className="display-3 text-white">
-                            Nuestros Productos{" "}
+                            MATERIAL DIDÁCTICO PARA EL AGUA
                           </h1>
                           <p className="lead text-white">
-                            Los productos estan limitados stock. Nos comunicaremos por WhatsApp para concordar el pago y el envio.
+                          Nos comunicaremos por Whatsapp para coordinar el pago y el envío,
                           </p>
-                          <b><a style={{color: "white", "text-decoration": "underline", 'font-size': "20px" }} href="https://drive.google.com/file/d/1RInYP5CNODjo_Iwkmqz0a-18wgWKPsVn/view?usp=sharing" rel="noopener noreferrer" target="_blank">Guia de recomendaciones para padres y madres</a></b>
+                          <p className="lead text-white">
+                          <b>
+                            ¿Compraste un set didáctico para niños?
+                            Te dejamos una <a style={{color: "white", "text-decoration": "underline", 'font-size': "20px" }} href="https://drive.google.com/file/d/1Y23susf6gZiwjYi5EQUIwoFGEVqFyfer/view" rel="noopener noreferrer" target="_blank">Guia de recomendaciones para padres y madres</a></b>
+                          </p>
                         </Col>
                       </Row>
                     </div>

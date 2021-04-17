@@ -2,8 +2,8 @@
 /* eslint-disable */
 import axios from 'axios';
 
-export const base = `http://interacua.bartuken.com/`;
-export const baseAssetsUrl = `http://interacua.bartuken.com`;
+export const base = `https://interacua.bartuken.com/`;
+export const baseAssetsUrl = `https://interacua.bartuken.com`;
 
 export default (apiPath) => {
   const totalTrys = 5;
